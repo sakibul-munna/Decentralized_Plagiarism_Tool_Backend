@@ -18,3 +18,8 @@ const Code = mongoose.model(
     date: { type: Date, dafault: Date.now() },
   })
 );
+
+router.get("/", async (req, res) => {
+  const codes = await Code.find().sort("date");
+  res.send(codes);
+});
