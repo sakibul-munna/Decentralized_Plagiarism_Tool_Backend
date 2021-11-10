@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
+const codes = require("./routes/codes");
+
 app.use(express.json());
+app.use("/api/codes", codes);
 
 mongoose
   .connect("mongodb://localhost/decPlagTool")
