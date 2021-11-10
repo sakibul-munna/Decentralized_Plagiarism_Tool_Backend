@@ -51,7 +51,7 @@ router.post("/", async (req, res) => {
   let code = new Code({
     author: req.body.author,
     code: req.body.code,
-    date: req.body.date,
+    date: Date.now(),
   });
   try {
     code = await code.save();
